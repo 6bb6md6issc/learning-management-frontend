@@ -45,7 +45,7 @@ const customBaseQuery = async (
       result.data = result.data.data;
     } else if (
       result.error?.status === 204 ||
-      result.meta?.response?.status === 24
+      result.meta?.response?.status === 204
     ) {
       return { data: null };
     }
