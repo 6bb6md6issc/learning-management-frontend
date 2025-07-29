@@ -17,7 +17,7 @@ const NonDashboardNavBar = () => {
           </Link>
           <div className='flex items-center gap-4'>
             <div className='relative group'>
-              <Link href="/search" className='nondashboard-navbar__search-input'>
+              <Link href="/search" className='nondashboard-navbar__search-input' scroll={false}>
                 <span className='hidden sm:inline'>Search Courses</span>
                 <span className='sm:hidden'>Search</span>
               </Link>
@@ -52,10 +52,10 @@ const NonDashboardNavBar = () => {
             />
           </SignedIn>
           <SignedOut>
-            <Link href="/signin" className='nondashboard-navbar__auth-button--login'>
+            <Link href="/signin" className='nondashboard-navbar__auth-button--login' scroll={false}>
               Log in
             </Link>
-            <Link href="/signup" className='nondashboard-navbar__auth-button--signup'>
+            <Link href="/signup" className='nondashboard-navbar__auth-button--signup' scroll={false}>
               Sign up
             </Link>
           </SignedOut>

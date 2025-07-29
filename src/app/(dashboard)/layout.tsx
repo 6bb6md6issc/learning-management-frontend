@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { useUser } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import ChaptersSidebar from "./user/courses/[courseId]/ChaptersSidebar";
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -34,8 +35,11 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       <div className="dashboard">
         <AppSidebar />
         <div className="dashboard__content">
-          {/* CHAPTER SIDEBARD GO HERE */}
-          <div className={cn( "dashboard__main" )} style={{ height: "100vh"}}> 
+          {courseId && <ChaptersSidebar />}
+          <div className={ cn( "dashboard__main",
+              isCoursePage && "dashboard__main--not-course"
+            )} 
+          style={{ height: "100vh"}}> 
             <Navbar isCoursePage={isCoursePage} />
             <main className="dashboard__body">{children}</main>
           </div>
